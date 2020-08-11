@@ -1,0 +1,75 @@
+*,
+html {
+  margin: 0;
+  padding: 0;
+}
+body {
+  color: #333;
+  font-family: Arial, Helvetica, sans-serif;
+  max-width: 650px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 0 16px;
+
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+img {
+  width: 250px;
+  height: auto;
+}
+
+.main-content {
+  flex-grow: 1;
+}
+
+.main-content form {
+  margin-top: 16px;
+}
+
+.main-content .message-1,
+.main-content .message-2 {
+  margin-top: 16px;
+  font-size: 16px;
+}
+
+input {
+  border: 1px solid #ccc;
+  padding: 8px;
+}
+
+button {
+  cursor: pointer;
+  border: 1px solid #888;
+  background-color: #888;
+  padding: 8px;
+  color: white;
+}
+
+header {
+  margin: 18px 0 28px 0;
+}
+
+header h1 {
+  font-size: 64px;
+  margin-bottom: 16px;
+}
+
+header a {
+  color: #888;
+  text-decoration: none;
+  margin-right: 16px;
+}
+
+footer {
+  padding: 24px 0;
+  border-top: 1px solid #eee;
+  color: grey;
+  font-size: 18px;
+}
+
+h3 {
+  color: green;
+}
