@@ -42,18 +42,23 @@ app.get("/weather", (req, res) => {
       if (error) {
         return res.send({ error });
       }
-      forecast(latitude, longitude, (error, { temperature, wind_speed }) => {
-        if (error) {
-          return res.send({
-            error,
+      forecast(
+        latitude,
+        longitude,
+        (error, { temperature, humidity, summary }) => {
+          if (error) {
+            return res.send({
+              error,
+            });
+          }
+          res.send({
+            temperature,
+            humidity,
+            location,
+            summary,
           });
         }
-        res.send({
-          temperature,
-          wind_speed,
-          location,
-        });
-      });
+      );
     }
   );
 });
@@ -77,18 +82,6 @@ app.get("/help", (req, res) => {
   res.render("help", {
     title: "Help",
     name: "ridels",
-  });
-});
-
-app.get("/products", (req, res) => {
-  if (!req.query.search) {
-    return res.send({
-      error: "you must provide a search term",
-    });
-  }
-  console.log(req.query.search);
-  res.send({
-    products: [],
   });
 });
 

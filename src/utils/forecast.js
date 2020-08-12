@@ -9,7 +9,11 @@ const forecast = (longitude, latitude, callback) => {
     "&units=m";
 
   request({ url: weather, json: true }, (error, response) => {
-    const { temperature, wind_speed } = response.body.current;
+    const {
+      temperature,
+      humidity,
+      weather_descriptions: summary,
+    } = response.body.current;
     if (error) {
       callback("unable to connect to weather service!", undefined);
     } else if (response.body.error) {
@@ -17,7 +21,8 @@ const forecast = (longitude, latitude, callback) => {
     } else {
       callback(undefined, {
         temperature,
-        wind_speed,
+        humidity,
+        summary,
       });
     }
   });
